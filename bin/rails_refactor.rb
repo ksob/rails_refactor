@@ -20,8 +20,8 @@ class Renamer
     replace_in_file("app/models/#{to_model_file}", @from, @to)
 
     to_spec_file = @to.underscore + "_spec.rb"
-    `mv spec/models/#{@from.underscore}_spec.rb spec/models/#{to_spec_file}`
-    replace_in_file("spec/models/#{to_spec_file}", @from, @to)
+    #`mv spec/models/#{@from.underscore}_spec.rb spec/models/#{to_spec_file}`
+    #replace_in_file("spec/models/#{to_spec_file}", @from, @to)
 
     Dir["db/migrate/*_create_#{@from.underscore.pluralize}.rb"].each do |file|
       timestamp_and_path = file.split('_')[0]
